@@ -1,0 +1,12 @@
+msg.payload.Temp_R = Number(msg.payload.Temp_R);
+msg.payload.Pres_R = Number(msg.payload.Pres_R);
+msg.payload.Humid_R = Number(msg.payload.Humid_R);
+msg.payload.GasResi_R = Number(msg.payload.GasResi_R);
+msg.payload.IAQ = Number(msg.payload.IAQ);
+msg.payload.IAQ_A = Number(msg.payload.IAQ_A);
+msg.payload.Temp = Number(msg.payload.Temp);
+msg.payload.Humid = Number(msg.payload.Humid);
+msg.payload.IAQ_S = Number(msg.payload.IAQ_S);
+msg.payload.CO2 = Number(msg.payload.CO2);
+msg.payload.VOC = Number(msg.payload.VOC);
+return msg;
