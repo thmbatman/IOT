@@ -1,0 +1,45 @@
+version: "3.8"
+services:
+  node-red-atharv:
+    image: nodered/node-red:latest
+    ports:
+      - "50240:1880"
+    networks:
+      - atharv_net
+    volumes:
+      - atharv_nodered_vol:/data
+      
+  influxdb-atharv:
+    image: influxdb:latest
+    ports:
+      - "50241:8086"
+    networks:
+      - atharv_net
+    volumes:
+      - atharv_influx_vol:/var/lib/influxdb2:rw
+
+  grafana-atharv:
+    image: grafana/grafana:latest
+    ports:
+    - "50242:3000"
+    networks:
+    - atharv_net
+    volumes:
+    - atharv_grafana_vol:/var/lib/grafana:rw
+
+  mosquitto-athrav:
+    image: eclipse-mosquitto:1.6.13
+    ports:
+      - "50243:1883"
+    networks:
+      - atharv_net
+  
+    
+
+volumes:
+  atharv_nodered_vol:
+  atharv_influx_vol:
+  atharv_grafana_vol:
+  
+networks:
+  atharv_net:
