@@ -1,31 +1,32 @@
 version: "3.8"
 services:
-  node-red-atharva:
+  node-red-atharv:
     image: nodered/node-red:latest
     ports:
       - "1880"
     networks:
-      - atharva_net
+      - atharv_net
     volumes:
-      - atharva_nodered_vol:/data
+      - atharv_nodered_vol:/data
       
-  influxdb-atharva:
+  influxdb-atharv:
     image: influxdb:latest
     ports:
       - "8086"
     networks:
-      - atharva_net
+      - atharv_net
     volumes:
-      - atharva_influx_vol:/var/lib/influxdb2:rw
+      - atharv_influx_vol:/var/lib/influxdb2:rw
 
-  grafana-atharva:
+  grafana-atharv:
     image: grafana/grafana:latest
     ports:
     - "3000"
     networks:
-    - atharva_net
+    - atharv_net
     volumes:
-    - atharva_grafana_vol:/var/lib/grafana:rw
+    - atharv_grafana_vol:/var/lib/grafana:rw
+
 
   
     
@@ -36,4 +37,4 @@ volumes:
   atharv_grafana_vol:
   
 networks:
-  atharva_net:
+  atharv_net:
